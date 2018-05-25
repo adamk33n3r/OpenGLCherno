@@ -28,6 +28,12 @@ Renderer::~Renderer()
 
 void Renderer::Clear() const
 {
+	GLCall(glClearColor(0.3f, 0.3f, 0.3f, 1.0f));
+	GLCall(glClear(GL_COLOR_BUFFER_BIT));
+}
+void Renderer::Clear(float x, float y, float z, float w) const
+{
+	GLCall(glClearColor(x, y, z, w));
 	GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 
