@@ -31,7 +31,7 @@ const int WIDTH = 960;
 void ReadLineFn(ImGuiContext*, ImGuiSettingsHandler*, void* entry, const char* line)
 {
 	float r, g, b, a;
-	if (sscanf_s(line, "ClearColor=%f,%f,%f,%f", &r, &g, &b, &a) == 4) {
+	if (sscanf(line, "ClearColor=%f,%f,%f,%f", &r, &g, &b, &a) == 4) {
 		ImVec4* vec = ((ImVec4*)entry);
 		vec->x = r;
 		vec->y = g;
